@@ -1,150 +1,110 @@
-````markdown
-# 📝 QuizApp Desktop
+**📝 QuizDesk**
 
-_A standalone Python/Tkinter‑powered desktop quiz application, packaged into a Windows .exe for zero‑install ease._
-
----
-
-## 🚀 Overview
-
-QuizApp Desktop brings your quiz questions to life in a simple, intuitive GUI.  Educators and learners alike can load question sets, take timed quizzes, and see instant scoring—all without touching a web browser.
+_**A standalone Python/Tkinter‑powered desktop quiz application, packaged into a Windows .exe for zero‑install ease.**_
 
 ---
 
-## ✨ Key Features
+**🚀 Overview**  
+QuizDesk brings your quiz questions to life in a simple, intuitive GUI. Educators and learners alike can load question sets, take timed quizzes, and see instant scoring—all without touching a web browser.
+
+---
+
+**✨ Key Features**
 
 - **Zero‑install .exe**  
-  Download and run the Windows executable—no Python required.
-
+  Download and run the Windows executable—no Python required.  
 - **Dynamic Question Loading**  
-  Point QuizApp to any JSON or CSV question file and start immediately.
-
+  Point QuizDesk at any JSON or CSV file containing your quiz data and start immediately.  
 - **Timed Quiz Sessions**  
-  Set a global time limit per quiz to challenge yourself or your students.
-
+  A global countdown timer keeps each quiz challenging and engaging.  
 - **Real‑Time Scoring & Feedback**  
-  See your score at the end of each session, with per‑question correctness.
-
+  Scores update live; see per‑question correctness and overall performance.  
 - **Customizable Themes & Icons**  
-  Swap in your own icon or color scheme by editing the assets folder.
+  Built on ttkbootstrap—you can swap themes or replace the `olaneye.ico` file in the project root.
 
 ---
 
-## 🛠️ Technologies
+**🛠️ Technologies**
 
-| **Layer**        | **Technologies**                         |
-|------------------|------------------------------------------|
-| **UI & Logic**   | Python, Tkinter                          |
-| **Packaging**    | PyInstaller                              |
-| **Version Control** | Git                                    |
-| **Data Files**   | JSON, CSV                                |
+| **Layer**            | **Technologies**              |
+|----------------------|-------------------------------|
+| **UI & Logic**       | Python, Tkinter, ttkbootstrap |
+| **Packaging**        | PyInstaller                   |
+| **Version Control**  | Git                           |
+| **Data Files**       | JSON, CSV                     |
 
 ---
 
-## 🔧 Installation & Setup
+**🔧 Installation & Setup**
 
-### ✅ Prerequisites
+**✅ Prerequisites**  
+- **Windows 10+ (64‑bit)** for the `.exe`  
+- **Python 3.8+ & pip** (only if running from source)
 
-> **End Users**  
-> - Windows 10+ (64‑bit)  
-
-> **Developers (from source)**  
-> - Python 3.8+  
-> - pip  
-
-### 📌 Setup Instructions
-
-1. **Clone the Repository**  
-   ```bash
-   git clone https://github.com/YourUserName/QuizApp-Desktop.git
-   cd QuizApp-Desktop
+**📌 Setup Instructions (from source)**  
+```bash
+git clone https://github.com/Boboahmedino/QuizDesk.git
+cd QuizDesk
+pip install -r requirements.txt
+python app.py
 ````
 
-2. **(Optional) Create & Activate a Virtual Environment**
+---
 
-   ```bash
-   python -m venv venv
-   # Windows:
-   venv\Scripts\activate
-   ```
-
-3. **Install Dependencies**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Run from Source**
-
-   ```bash
-   python src/app.py
-   ```
+**📥 Downloads**
+▶️ [Download the latest Windows .exe](https://github.com/Boboahmedino/QuizDesk/releases/latest)
+*No Python install required—just double‑click and go!*
 
 ---
 
-## 📥 Downloads
-
-▶️ [Download the latest Windows .exe](https://github.com/YourUserName/QuizApp-Desktop/releases/latest)
-
-> The `.exe` is published under **Releases**—no Python install required.
-
----
-
-## 📂 Project Structure
+**📂 Project Structure**
 
 ```plaintext
-QuizApp-Desktop/
-├── .gitignore
-├── LICENSE
-├── README.md
-├── CHANGELOG.md
-├── requirements.txt         ← e.g. tkinter, simplejson
-├── QuizApp.spec             ← PyInstaller spec for reproducible builds
-│
-├── src/                     ← Python source code
-│   ├── app.py               ← main entry point
-│   ├── data.py              ← question‑loading logic
-│   └── ui.py                ← Tkinter UI components
-│
-├── assets/                  ← runtime assets
-│   ├── icons/
-│   │   └── quiz_icon.ico    ← application icon
-│   └── questions/           ← sample JSON or CSV quiz files
-│       └── sample_quiz.json
-│
-└── docs/                    ← optional developer docs
-    └── Packaging.md         ← how to rebuild the .exe with PyInstaller
+QuizDesk/
+├── app.py             ← main entry point
+├── data.py            ← quiz‑loading logic (imports quiz_data)
+├── olaneye.ico        ← application icon for packaging
+└── README.md          ← this documentation
 ```
 
 ---
 
-## 🎮 Usage
+**🎮 Usage**
 
-1. Launch the app (double‑click the `.exe` or run `python src/app.py`).
-2. Click **Load Quiz** and select a JSON/CSV file.
-3. Set your desired time limit per quiz.
-4. Answer each question; click **Next**.
-5. View your score breakdown at the end.
+1. **Launch**
+
+   * Double‑click `QuizDesk.exe` (Windows)
+   * or run `python app.py` (from source)
+
+2. **Load a Quiz**
+   Click **Load Quiz**, then select a `.json` or `.csv` file.
+
+3. **Set Time Limit**
+   Enter the desired total quiz time in seconds (default: 90 sec).
+
+4. **Answer & Navigate**
+
+   * Read each question, select an option, then **Next**.
+   * Click **Submit** to finish early.
+
+5. **View Your Score**
+   A popup displays your final score and feedback.
 
 ---
 
-## 🔮 Future Enhancements
+**🔮 Future Enhancements**
 
 * **Leaderboard & Export**
-  Save scores locally or to CSV for tracking progress.
-
-* **Question Editor**
-  Build and edit quizzes from within the app GUI.
-
-* **Theming Engine**
-  Swap fonts, colors, and layouts via a settings panel.
+  Save and export score histories to CSV.
+* **Built‑in Quiz Editor**
+  Create and modify quizzes without external files.
+* **Theme Picker**
+  Let users switch between ttkbootstrap themes at runtime.
 
 ---
 
-## 👤 Author
-
+**👤 Author**
 **Olaneye Ahmed Oladapo**
-🔗 [GitHub](https://github.com/YourUserName) | 🔗 [LinkedIn](https://www.linkedin.com/in/olaneye/)
+🔗 [GitHub](https://github.com/Boboahmedino) | 🔗 [LinkedIn](https://www.linkedin.com/in/olaneye/)
 
-```
 ```
